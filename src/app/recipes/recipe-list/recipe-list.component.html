@@ -1,9 +1,15 @@
 <h1>{{pageTitle}}</h1>
 
-<ul>
-  <li *ngFor="let recipe of recipes">
-    {{recipe.title}}
-    <br />
-    <img [src]="recipe.imageUrl" style="max-width: 250px" />
-  </li>
-</ul>
+<div class="row">
+  <div *ngFor="let recipe of recipes" class="col md-4 sm-6">
+    <div class="card" style="width: 100%;">
+      <img class="card-img-top" [src]="recipe.imageUrl" alt="">
+
+      <div class="card-body">
+        <h5 class="card-title">{{recipe.title}}</h5>
+        <p class="card-text">{{recipe.description}} </p>
+        <a href="#" class="btn btn-primary">Details</a>
+      </div>
+    </div>
+  </div>
+</div>
