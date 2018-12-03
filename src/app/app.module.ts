@@ -16,7 +16,7 @@ import { RecipeService } from './recipes/shared/recipe.service';
     BrowserModule,
     ShoppingListModule,
     RecipesModule,
-    FormsModule
+    FormsModule,
   ],
   providers: [RecipeService],
   bootstrap: [AppComponent]
