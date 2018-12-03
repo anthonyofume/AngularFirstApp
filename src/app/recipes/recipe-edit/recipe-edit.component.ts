@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { RecipeService } from '../shared/recipe.service';
+import { Router } from '@angular/router'
 
 @Component({
   selector: 'app-recipe-edit',
@@ -7,13 +9,14 @@ import { Component, OnInit } from '@angular/core';
 })
 export class RecipeEditComponent implements OnInit {
 
-  constructor() { }
+  constructor(private recipeService: RecipeService, private router: Router) { }
 
   ngOnInit() {
+
   }
   onAddRecipe(form) {
-    alert(JSON.stringify(form.value));
-    console.log(form);
+    this.recipeService.addRecipe(form.value);
+    this.router.navigate(['/recipes'])
   }
 
 }

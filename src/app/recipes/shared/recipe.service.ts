@@ -16,4 +16,7 @@ export class RecipeService {
   getRecipes() {
     return this.recipes;
   }
+  addRecipe(recipe: any) {
+    this.recipes.push(recipe);
+  }
 }
