@@ -5,10 +5,12 @@ import { CommonModule } from "@angular/common";
 import { RecipeEditComponent } from './recipe-edit/recipe-edit.component';
 import { from } from 'rxjs';
 import { RecipeDetailComponent } from './recipe-detail/recipe-detail.component';
+import { RouterModule } from '@angular/router';
 @NgModule({
   imports: [
     CommonModule,
-    FormsModule
+    FormsModule,
+    RouterModule
   ],
   declarations: [
     RecipeListComponent,

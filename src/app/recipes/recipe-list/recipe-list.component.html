@@ -1,14 +1,14 @@
 <h1>{{pageTitle}}</h1>
 
 <div class="row">
-  <div *ngFor="let recipe of recipes" class="col md-4 sm-6">
-    <div class="card" style="width: 100%;">
+  <div *ngFor="let recipe of recipes; let i = index" class="col mb-6">
+    <div class="card" style="width: 18rem;">
       <img class="card-img-top" [src]="recipe.imageUrl" alt="">
 
       <div class="card-body">
         <h5 class="card-title">{{recipe.title}}</h5>
         <p class="card-text">{{recipe.description}} </p>
-        <a href="#" class="btn btn-primary">Details</a>
+        <a class="btn btn-primary" [routerLink]="['/recipes', i]">Details</a>
       </div>
     </div>
   </div>
