@@ -11,5 +11,9 @@ export class RecipeEditComponent implements OnInit {
 
   ngOnInit() {
   }
+  onAddRecipe(form) {
+    alert(JSON.stringify(form.value));
+    console.log(form);
+  }
 
 }

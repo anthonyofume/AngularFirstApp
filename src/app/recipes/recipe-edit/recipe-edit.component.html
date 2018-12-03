@@ -1,17 +1,18 @@
-<form (ngSubmit)="onAddRecipe()">
+<form (ngSubmit)="onAddRecipe(f)" #f="ngForm">
   <div class="form-group">
     <label for="title">Title</label>
-    <input type="text" class="form-control" id="title" placeholder=" Title of recipe" ngModel name="title">
+    <input type="text" class="form-control" id="title" placeholder=" Title of recipe" ngModel name="title" required>
   </div>
 
   <div class="form-group">
     <label for="name">Author</label>
-    <input type="text" class="form-control" id="name" placeholder="Your Name" ngModel name="author">
+    <input type="text" class="form-control" id="name" placeholder="Your Name" ngModel name="author" required>
   </div>
 
   <div class="form-group">
     <label for="imgUrl">Image Link</label>
-    <input type="text" class="form-control" id="imgUrl" placeholder="Image Link" ngModel name="imageUrl" #imagePath>
+    <input type="text" class="form-control" id="imgUrl" placeholder="Image Link" ngModel name="imageUrl" #imagePath
+      required>
   </div>
 
   <div class="form-group">
@@ -19,7 +20,9 @@
     <textarea class="form-control" id="description" ngModel name="description"></textarea>
   </div>
 
-  <img [src]="imagePath.value" />
+  <div><img [src]="imagePath.value" class="img-fluid" /></div>
+  <div>
+    <button type="submit" class="btn btn-primary" [disabled]="!f.valid">Submit</button>
 
-  <button type="submit" class="btn btn-primary">Submit</button>
+  </div>
 </form>
