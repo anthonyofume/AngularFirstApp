@@ -1,0 +1,25 @@
+<form (ngSubmit)="onAddRecipe()">
+  <div class="form-group">
+    <label for="title">Title</label>
+    <input type="text" class="form-control" id="title" placeholder=" Title of recipe" ngModel name="title">
+  </div>
+
+  <div class="form-group">
+    <label for="name">Author</label>
+    <input type="text" class="form-control" id="name" placeholder="Your Name" ngModel name="author">
+  </div>
+
+  <div class="form-group">
+    <label for="imgUrl">Image Link</label>
+    <input type="text" class="form-control" id="imgUrl" placeholder="Image Link" ngModel name="imageUrl" #imagePath>
+  </div>
+
+  <div class="form-group">
+    <label for="description">Description</label>
+    <textarea class="form-control" id="description" ngModel name="description"></textarea>
+  </div>
+
+  <img [src]="imagePath.value" />
+
+  <button type="submit" class="btn btn-primary">Submit</button>
+</form>
