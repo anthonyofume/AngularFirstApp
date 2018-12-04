@@ -1,3 +1,5 @@
-<p>
-  recipe-detail works!
-</p>
+<div *ngIf="recipe">
+  {{recipe.title}}
+  <br />
+  <img class="img-fluid" src="{{recipe.imageUrl}}" alt="{{recipe.title}}">
+</div>

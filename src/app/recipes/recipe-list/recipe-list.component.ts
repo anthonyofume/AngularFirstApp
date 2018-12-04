@@ -16,4 +16,7 @@ export class RecipeListComponent implements OnInit {
     this.recipes = this.recipeService.getRecipes();
   }
 
+  deleteMe(index: number) {
+    this.recipeService.deleteRecipe(index);
+  }
 }

@@ -18,6 +18,7 @@
         <h5 class="card-title">{{recipe.title}}</h5>
         <p class="card-text">{{recipe.description}} </p>
         <a class="btn btn-primary" [routerLink]="['/recipes', i]">Details</a>
+        <a (click)="deleteMe(i)" style="cursor: pointer; color: white;" class="btn btn-danger ml-2">Delete</a>
       </div>
     </div>
   </div>
