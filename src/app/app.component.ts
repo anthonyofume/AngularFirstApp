@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { RecipeService } from './recipes/shared/recipe.service';
 
 @Component({
   selector: 'app-root',
@@ -6,5 +7,14 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'Our First App';
+  constructor(private recipeService: RecipeService) { }
+
+  onSaveData() {
+    this.recipeService.saveRecipes().subscribe(
+      response => alert('saved')
+    )
+  }
+  onGetData() {
+    this.recipeService.getRecipesFromFireBase();
+  }
 }

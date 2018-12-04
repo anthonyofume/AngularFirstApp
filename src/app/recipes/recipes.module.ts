@@ -18,7 +18,8 @@ import { HttpClientModule } from '@angular/common/http';
     RecipeEditComponent,
     RecipeDetailComponent
   ],
-  exports: [RecipeListComponent,
+  exports: [
+    RecipeListComponent,
     RecipeEditComponent]
 })
 export class RecipesModule {

@@ -2,9 +2,7 @@ import { Injectable } from '@angular/core';
 import { Recipe } from './recipe.model';
 import { HttpClient } from '@angular/common/http';
 
-@Injectable({
-  providedIn: 'root'
-})
+@Injectable()
 export class RecipeService {
 
   recipes: Recipe[] = [
@@ -20,6 +18,10 @@ export class RecipeService {
   getRecipes() {
     return this.recipes;
   }
+  getRecipesFromFireBase() {
+    return this.http.get('https://recipe-book-ng-76380.firebaseio.com/recipes.json').subscribe(
+      (response: Recipe[]) => this.recipes = response);
+  }
   addRecipe(recipe: Recipe) {
     this.recipes.push(recipe);
   }
@@ -30,6 +32,7 @@ export class RecipeService {
     this.recipes.splice(index, 1);
   }
   saveRecipes() {
-    this.http.post('https://recipe-book-ng-76380.firebaseio.com/recipes.json', this.recipes);
+    return this.http.put('https://recipe-book-ng-76380.firebaseio.com/recipes.json', this.recipes);
   }
+
 }

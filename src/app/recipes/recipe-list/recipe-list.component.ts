@@ -1,5 +1,6 @@
 import { Component, OnInit, Injectable } from '@angular/core';
 import { RecipeService } from '../shared/recipe.service';
+import { Recipe } from '../shared/recipe.model';
 
 @Component({
   selector: 'app-recipe-list',
@@ -7,8 +8,8 @@ import { RecipeService } from '../shared/recipe.service';
   styleUrls: ['./recipe-list.component.css']
 })
 export class RecipeListComponent implements OnInit {
-  pageTitle = "Recipes"
-  recipes = [];
+  pageTitle: string = "Recipes";
+  recipes: Recipe[];
 
   constructor(private recipeService: RecipeService) { }
 
